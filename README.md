@@ -1,9 +1,15 @@
 # Syntaxnet
 
-This is a Dockerfile descended from https://github.com/brianlow/syntaxnet-docker which builds [Google's SyntaxNet](https://github.com/tensorflow/models/tree/master/syntaxnet) Parser and POS tagger.  Most of the magic is in that parent Dockerfile, this one swaps out the tree output for outputting a CONLL table, which is easier to work with as an intermediate form.
+This is a Dockerfile descended from https://github.com/brianlow/syntaxnet-docker which builds [Google's SyntaxNet](https://github.com/tensorflow/models/tree/master/syntaxnet) Parser and POS tagger.  Most of the magic is in that parent Dockerfile, this one swaps out the tree output for outputting a CoNLL table, which is easier to work with as an intermediate form.
+
+#CoNLL
+CoNLL is a conference about computational natural language learning -- http://www.conll.org/ 
+
+The CoNLL table output format here is from a challenge (shared task) they had around a decade ago.
+
+Information on the CoNLL-U format emitted by this can be found here:  http://universaldependencies.org/format.html
 
 #Usage
------
 
 ```shell
 echo "This is descended from brianlow/syntaxnet-docker but modified to emit CONLL instead of a tree." | docker run --rm -i corprew/syntaxnet-conll
